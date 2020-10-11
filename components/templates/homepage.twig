@@ -1,0 +1,20 @@
+{% extends 'inc/_layout.twig' %}
+{% block main %}
+{% include '@navigation' %}
+{% include '@image-home-bg-header' with { text: "Coffee news from the shop and beyond."} %}
+<div class="container lg:mx-auto xl:auto sm:mx-auto">
+<div class="gap-24 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid mt-16">
+    <div>
+        {% include "@section-title" with { text: "Favorite Drinks" } %}
+        {% for item in 1..4 %}
+            {% include "@image-with-overlay" with { text: 'Perfect Espresso' } %}
+        {% endfor %}
+    </div>
+    <div>
+        {% include "@section-title" with { text: "Latest Coffee News" } %}
+        {% include "@text-blurb-list" %}
+    </div>
+  </div>
+</div>
+{% include "@footer" %}
+{% endblock %}
